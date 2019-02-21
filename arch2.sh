@@ -59,7 +59,7 @@ echo 'Ставим иксы и драйвера'
 pacman -S $gui_install
 
 echo 'Ставим Cinnamon lightdm и сеть'
-pacman -S cinnamon cinnamon-translations lightdm networkmanager network-manager-applet bumblebee bluetooth
+pacman -S cinnamon cinnamon-translations lightdm networkmanager network-manager-applet bumblebee
 
 echo 'Ставим шрифты'
 pacman -S ttf-liberation ttf-dejavu opendesktop-fonts ttf-bitstream-vera ttf-arphic-ukai ttf-arphic-uming ttf-hanazono --noconfirm 
