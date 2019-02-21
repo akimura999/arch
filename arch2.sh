@@ -50,7 +50,8 @@ pacman -Syy
 echo "Куда устанавливем Arch Linux на виртуальную машину?"
 read -p "1 - Да, 0 - Нет: " vm_setting
 if [[ $vm_setting == 0 ]]; then
-  gui_install="xorg-server xorg-drivers xorg-xinit nvidia nvidia-utils nvidia-settings xf86-video-intel"
+  gui_install="xorg-server xorg-drivers xorg-xinit nvidia nvidia-utils nvidia-settings xf86-video-intel bumblebee"
+  systemctl enable bumblebeed
 elif [[ $vm_setting == 1 ]]; then
   gui_install="xorg-server xorg-drivers xorg-xinit virtualbox-guest-utils"
 fi
@@ -59,12 +60,12 @@ echo 'Ставим иксы и драйвера'
 pacman -S $gui_install
 
 echo 'Ставим Cinnamon lightdm и сеть'
-pacman -S cinnamon cinnamon-translations lightdm networkmanager network-manager-applet bumblebee
+pacman -S cinnamon cinnamon-translations lightdm networkmanager network-manager-applet
 echo 'Ставим шрифты'
 pacman -S ttf-liberation ttf-dejavu opendesktop-fonts ttf-bitstream-vera ttf-arphic-ukai ttf-arphic-uming ttf-hanazono --noconfirm 
 
 echo 'Подключаем автозагрузку менеджера входа и интернет'
-systemctl enable lightdm NetworkManager bumblebeed
+systemctl enable lightdm NetworkManager
 
 echo 'Перезагрузка. После перезагрузки заходим под пользователем'
 exit
