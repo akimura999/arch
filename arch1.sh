@@ -67,4 +67,5 @@ genfstab -pU /mnt >> /mnt/etc/fstab
 
 arch-chroot /mnt pacman -S git
 git clone git://github.com/akimura999/arch
-cd /arch sh arch2.sh
+cd /arch 
+sh arch2.sh
