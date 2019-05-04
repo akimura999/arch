@@ -16,17 +16,19 @@ cd aurman
 makepkg -si --noconfirm --skippgpcheck
 cd ..
 rm -rf aurman
+aurman -S pamac-aur google-chrome yandex-browser-beta korla-ikon-theme caffeine-ng docky timeshift
 
 echo 'Установка программ'
-sudo pacman -S firefox ufw --noconfirm libreoffice libreoffice-fresh-ru audacious audacious-plugins vlc qt4 deluge alsa-lib alsa-utils p7zip unrar gvfs aspell-ru pulseaudio --noconfirm acetoneiso bleachbit brasero docky epdfview firefox firefox-i18n-ru leafpad playonlinux redshift remmina sakura steam timeshift wine winetricks xarchiver blueman catfish gufw gnome-system-monitor  gpicview pcmanfm gnome-screenshot mate-calc cantarell-fonts bbswitch hdparm intel-ucode pepper-flash reflector   
-# aurman -S pamac-aur --noconfirm  reflector-timer caffeine-ng windows10-icons 
-
+sudo pacman -S ufw libreoffice libreoffice-fresh-ru audacious audacious-plugins vlc deluge alsa-lib alsa-utils p7zip unrar gvfs aspell-ru pulseaudio --noconfirm acetoneiso2 bleachbit brasero  epdfview leafpad playonlinux redshift remmina sakura steam  wine winetricks xarchiver blueman catfish gufw gnome-system-monitor  gpicview pcmanfm gnome-screenshot mate-calc cantarell-fonts bbswitch hdparm intel-ucode pepper-flash reflector gameconqueror
+ 
 echo 'Установка тем'
 aurman -S osx-arc-shadow breeze-obsidian-cursor-theme papirus-maia-icon-theme-git --noconfirm windows10-icons korla-icon-theme
 
 echo 'Создаем нужные директории'
 sudo pacman -S xdg-user-dirs
-xdg-user-dirs-update
+
+echo 'Включаем сетевой экран'
+sudo ufw enable
 
 echo 'Качаем и устанавливаем настройки Cinnamon'
 cd ~/Загрузки
@@ -41,6 +43,8 @@ sudo mv -f ~/Загрузки/archlinux_logo.png /usr/share/pixmaps/archlinux_lo
 mkdir ~/Изображения
 mkdir ~/Документы
 mkdir ~/Загрузки
+mkdir ~/Музыка
+mkdir ~/Видео
 
 echo 'Ставим обои на рабочий стол'
 wget https://getfile.dokpub.com/yandex/get/https://yadi.sk/i/azK7wgu51mGeuA -O peyzazh-81.jpg
