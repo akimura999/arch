@@ -64,4 +64,4 @@ pacstrap /mnt base base-devel linux linux-headers nano git wget
 
 echo '3.3 Настройка системы'
 genfstab -pU /mnt >> /mnt/etc/fstab
-arch-chroot /mnt sh -c "$(curl )"
+arch-chroot /mnt sh -c "$(curl raw.githubusercontent.com/akimura999/arch/master/arch20-1.sh )"
